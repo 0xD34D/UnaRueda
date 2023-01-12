@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/connect_button"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:text="@string/connect_label"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <CheckBox
+        android:id="@+id/auto_connect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/auto_connect_label"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/connect_button" />
+
+    <CheckBox
+        android:id="@+id/enable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/enable_label"
+        app:layout_constraintBottom_toTopOf="@id/brightness_level"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <com.ramotion.fluidslider.FluidSlider
+        android:id="@+id/brightness_level"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:elevation="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:size="small"
+        app:duration="@android:integer/config_mediumAnimTime" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/brightness_label"
+        app:layout_constraintTop_toBottomOf="@id/brightness_level"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <com.ramotion.fluidslider.FluidSlider
+        android:id="@+id/animation_speed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:elevation="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/brightness_level"
+        app:size="small"
+        app:duration="@android:integer/config_mediumAnimTime" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/animation_speed_label"
+        app:layout_constraintTop_toBottomOf="@id/animation_speed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <CheckBox
+        android:id="@+id/rgb_blending"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/rgb_blending_label"
+        app:layout_constraintBottom_toTopOf="@id/more_colors"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <CheckBox
+        android:id="@+id/more_colors"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="@string/more_colors_label"
+        app:layout_constraintBottom_toTopOf="@id/color_selector"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <LinearLayout
+        android:id="@+id/color_selector"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <View
+            android:id="@+id/start_color"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="1dp"
+            android:background="@color/start_color"/>
+        <View
+            android:id="@+id/end_color"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_weight="1"
+            android:layout_marginStart="1dp"
+            android:background="@color/end_color"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
